@@ -1,0 +1,39 @@
+ Input File for oksar							v3.0
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+ General parameters
+----------------------------------------------------------------------------
+ 350050 500050 100       |<- x_min x_max x_increment (km/degrees/m)       (1)
+ 4350050 4500050 100     |<- y_min y_max y_increment (km/degrees/m)       (2)
+ 3.2e10  3.2e10	 	 |<- elastic constants: lambda mu		 (4)
+ 0			 |<- Coords:RAW km(=2),degs(=1),or UTM Metres(=0) (5)
+ 11			 |<- UTM Zone Number				 (6)
+ N			 |<- Northern / Southern Hemisphere (N/S)	 (7)
+ 0.0277329		 |<- Displacement required for single fringe (m)  (8)
+ 1			 |<- Number of faults (Maximum 300)		 (9)
+ 0			 |<- Depth of output(km) [>0 requires full okada]
+ 1			 |<- Use variable line of sight (1/0) 
+ -0.456  -0.1186 0.8809  |<- if 0, constant l.o.s. vector: (east north up)
+425050 4425050 6370201   |<- if 1,{xref yref earthrad  (coords of ref pt.)
+350.128 38.31 700336 	 |<-      {sat_azimuth sat_inc sat_height (at ref pt)
+----------------------------------------------------------------------------
+ Details of Output Files required
+----------------------------------------------------------------------------
+ 1			|<- output files in BINARY (=1) ASCII (=0)	(10)
+ 1			|<- output ERMapper headers  (1=yes;0=no)	(11)
+ NONE			|<- east(x)-displacement (cm) 	       / "NONE" (12)
+ NONE			|<- north(y)-displacement (cm) 	       / "NONE"	(13)
+ NONE			|<- vertical(z)-displacement (cm)      / "NONE"	(14)
+ asc_rake-dip-strike_unwcm	|<- los-displacement (cm) 	       / "NONE"	(15)
+ asc_rake-dip-strike_wrara	|<- wrapped,los-displacement (radians) / "NONE"	(16)
+ NONE			|<- 9 component strain tensor(9bands)  / "NONE"	(18)
+ NONE			|<- Phase gradient,dphase/dx (rads/km) / "NONE"	(17)
+ NONE			|<- Phase gradient,dphase/dy (rads/km) / "NONE"	(18)
+ asc_rake-dip-strike_fault	|<- End coords of faults 	       / "NONE" (19)
+----------------------------------------------------------------------------
+ Fault parameters (add up to 300 faults)
+--------------------------------------------------------------------------
+425000   4425000          --- Fault ss(west) ---
+strike  dip  rake	  s d r
+1                         Slip
+20 0 bottomdepth	  len top bot
